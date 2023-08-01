@@ -7,46 +7,39 @@ import { SafeUser } from "@/app/types";
 
 import Heading from "../Heading";
 import HeartButton from "../HeartButton";
+import Gallery from "../Gallery";
 
 interface ListingHeadProps {
   title: string;
-  locationValue: string;
-  imageSrc: string;
+  address: string;
+  images: Array<string>;
   id: string;
   currentUser?: SafeUser | null
 }
 
 const ListingHead: React.FC<ListingHeadProps> = ({
   title,
-  locationValue,
-  imageSrc,
+  address,
+  images,
   id,
   currentUser
 }) => {
   const { getByValue } = useCountries();
 
-  const location = getByValue(locationValue);
-
   return ( 
     <>
       <Heading
         title={title}
-        subtitle={`${location?.region}, ${location?.label}`}
+        subtitle={address}
       />
       <div className="
           w-full
-          h-[60vh]
           overflow-hidden 
           rounded-xl
           relative
         "
       >
-        <Image
-          src={imageSrc}
-          fill
-          className="object-cover w-full"
-          alt="Image"
-        />
+        <Gallery images={[]} />
         <div
           className="
             absolute

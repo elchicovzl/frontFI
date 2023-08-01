@@ -2,7 +2,7 @@
 
 import Container from "@/app/components/Container";
 import EmptyState from "@/app/components/EmptyState";
-import ListingCard from "@/app/listings/ListingCard";
+import ListingCard from "@/app/listings/ListingCard"
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import getListings, { 
