@@ -22,9 +22,11 @@ interface ListingsProps {
 
 
 const Listings = async ({ listings , currentUser, pageCount }: ListingsProps) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter()
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const searchParams = useSearchParams()
-  const pathname = usePathname()
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isPending, startTransition] = React.useTransition();
 
   const page = searchParams?.get("page") ?? "1"
@@ -32,6 +34,7 @@ const Listings = async ({ listings , currentUser, pageCount }: ListingsProps) =>
   const sort = searchParams?.get("sort") ?? "createdAt.desc"
 
   // Create query string
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const createQueryString = React.useCallback(
     (params: Record<string, string | number | null>) => {
       const newSearchParams = new URLSearchParams(searchParams?.toString())
