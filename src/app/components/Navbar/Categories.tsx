@@ -23,57 +23,57 @@ export const categories = [
     {
         label: 'Apartamento',
         icon: MdOutlineApartment,
-        description: 'This property is close to the beach!',
+        description: 'El lugar perfecto.',
       },
       {
         label: 'Apartaestudio',
         icon: FaLaptopHouse,
-        description: 'This property is has windmills!',
+        description: 'Mono ambiente.',
       },
       {
         label: 'Casa',
         icon: GiHouse,
-        description: 'This property is modern!'
+        description: 'De sus sueños.'
       },
       {
         label: 'Finca',
         icon: GiVikingLonghouse,
-        description: 'This property is in the countryside!'
+        description: 'Distracción fuera de la ciudad.'
       },
       {
         label: 'Habitacion',
         icon: GiPersonInBed,
-        description: 'This is property has a beautiful pool!'
+        description: 'Calida y comoda.'
       },
       {
         label: 'Lote',
         icon: GiForestCamp,
-        description: 'This property is on an island!'
+        description: 'Excelente ubicación'
       },
       {
         label: 'Oficina',
         icon: GiOfficeChair,
-        description: 'This property is near a lake!'
+        description: 'Excelente estado.'
       },
       {
         label: 'Bodega',
         icon: FaWarehouse,
-        description: 'This property has skiing activies!'
+        description: 'Excelente estado.'
       },
       {
         label: 'Local',
         icon: FaStore,
-        description: 'This property is an ancient castle!'
+        description: 'Excelente estado.'
       },
       {
         label: 'Edificio',
         icon: BiBuilding,
-        description: 'This property is in a spooky cave!'
+        description: 'Excelente estado.'
       },
       {
         label: 'Parqueadero',
         icon: FaParking,
-        description: 'This property offers camping activities!'
+        description: 'Seguridad confiable.'
       },
 ]
 

@@ -7,6 +7,10 @@ import LoginModal from './components/modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
 import RentModal from './components/modals/RentModal'
 import SearchModal from './components/modals/SearchModal'
+import Footer from './components/Footer'
+import Testimonials from './components/Testimonials'
+import Services from './components/Services'
+import Contact from './components/Contact'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,6 +39,9 @@ export default async function RootLayout({
         <div className='pb-20 pt-28'>
           {children}
         </div>
+        
+        <Footer />
+
       </body>
     </html>
   )

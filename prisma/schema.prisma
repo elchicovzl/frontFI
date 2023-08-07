@@ -113,3 +113,12 @@ model Reservation {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
 }
+
+model Contact {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String
+  name String
+  message String
+
+  createdAt DateTime @default(now())
+}

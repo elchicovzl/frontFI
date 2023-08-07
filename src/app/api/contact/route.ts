@@ -1,8 +1,5 @@
-import bcrypt from "bcrypt";
-
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
-
 
 export async function POST(
     request: Request 
@@ -11,18 +8,20 @@ export async function POST(
     const {
         email,
         name,
-        password
+        message
     } = body;
 
-    const hashedPassword = await bcrypt.hash(password, 12);
-    
-    const user = await prisma.user.create({
+    if (!email || typeof email !== 'string') {
+        throw new Error('Correo Invalido');
+    }
+
+    const contact = await prisma.contact.create({
         data: {
             email,
             name,
-            hashedPassword
+            message
         }
     });
 
-    return NextResponse.json(user);
+    return new NextResponse("Success", { status: 200 });
 }

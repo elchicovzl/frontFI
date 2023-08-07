@@ -1,4 +1,7 @@
 import React from "react";
+import Testimonials from './components/Testimonials'
+import Services from './components/Services'
+import Contact from './components/Contact'
 
 import getListings, { 
   IListingsParams
@@ -24,13 +27,17 @@ const Home = async ({ searchParams }: HomeProps) => {
   const offset = typeof page === "string" ? (parseInt(page) - 1) * limit : 0;
 
   const {safeListings, total} = await getListings(searchParams, limit, offset);
-  
   const pageCount = Math.ceil(total / limit);
 
-  
-
   return (
-      <Listings currentUser={currentUser}  listings={safeListings} pageCount={pageCount} />
+      <div>
+        <Listings currentUser={currentUser}  listings={safeListings} pageCount={pageCount} />
+        <div className="mt-20">
+          <Services />
+          <Testimonials />
+          <Contact />
+        </div>
+      </div>
   )
 }
 

@@ -101,18 +101,13 @@ const ListingCard: React.FC<ListingCardProps> = ({
                     </div>
                   </div>
         
-                  <div className="absolute bottom-0 left-5 mb-3 flex">
+                  <div className="absolute bottom-0 left-5 mb-3 flex bg-black rounded-lg p-1">
                     <p className="flex items-center font-medium text-white shadow-sm">
-                      <FaCamera className="mr-2 text-xl text-white"/>
-                      10
+                      <FaCamera className="mr-2 text-lg text-white"/>
+                      {data.imageMultipleSrc.length}
                     </p>
                   </div>
-                  <div className="absolute bottom-0 right-5 mb-3 flex">
-                    <HeartButton
-                      listingId={data.id} 
-                      currentUser={currentUser}
-                    />
-                  </div>
+                  
         
                   <span className="absolute top-0 right-2 z-10 mt-3 ml-3 inline-flex select-none rounded-sm bg-emerald-600 px-2 py-1 text-xs font-semibold text-white"> {data.typeListing} </span>
                 </div>
