@@ -67,9 +67,9 @@ const Gallery: React.FC<GalleryProps>  = ({
         <div className="swiper">
             <button className="swiper-button-prev" onClick={() => swiperRef.current?.slidePrev()}></button>
             <div className="swiper-wrapper !h-[250px]  sm:!h-[350px]" id="lg-swipper">
-                {images.map((image: any) => (
-                    <a data-lg-size="1600-1067" className="swiper-slide cursor-pointer" data-src={image}>
-                        <img className="img-responsive h-full w-full rounded-lg object-cover object-center" src={image} />
+                {images.map((image: any, index: number) => (
+                    <a key={index} data-lg-size="1600-1067" className="swiper-slide cursor-pointer" data-src={image}>
+                        <Image  className="img-responsive h-full w-full rounded-lg object-cover object-center" alt={'image'+index} src={image} />
                     </a>
                 ))}
                 </div>
