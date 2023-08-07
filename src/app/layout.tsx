@@ -15,8 +15,8 @@ import Contact from './components/Contact'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Admon app',
-  description: 'Aplicación para administracion segura',
+  title: 'Frontera Inmobiliaria',
+  description: 'Aplicación busqueda de inmuebles, propidades en alquiler y venta.',
 }
 
 export default async function RootLayout({
