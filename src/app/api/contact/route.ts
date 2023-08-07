@@ -1,5 +1,3 @@
-import bcrypt from "bcryptjs-react";
-
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 
@@ -13,8 +11,17 @@ export async function POST(
         message
     } = body;
 
-    console.log(email);
+    if (!email || typeof email !== 'string') {
+        throw new Error('Correo Invalido');
+    }
 
+    const contact = await prisma.contact.create({
+        data: {
+            email,
+            name,
+            message
+        }
+    });
 
     return new NextResponse("Success", { status: 200 });
 }

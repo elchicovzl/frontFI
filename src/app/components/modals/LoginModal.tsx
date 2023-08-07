@@ -50,13 +50,13 @@ const LoginModal = () => {
             setIsLoading(false);
 
             if (callback?.ok) {
-                toast.success('Logged in');
+                toast.success('Inicio de sessión exitoso');
                 router.refresh();
                 loginModal.onClose();
             }
 
             if (callback?.error) {
-                toast.error(callback.error);
+                toast.error("Credenciales invalidas");
             }
         })
     }
