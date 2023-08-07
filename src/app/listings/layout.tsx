@@ -16,29 +16,15 @@ export const metadata = {
   description: 'Frontera inmobiliaria perfil de inmueble.',
 }
     
-export default async function ListingLayout({
+export default function ListingLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
 
-  const currentUser = await getCurrentUser();
-
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ToasterProvider />
-        <SearchModal />
-        <RentModal />
-        <LoginModal />
-        <RegisterModal />
-        <Navbar currentUser={currentUser}></Navbar>
-        <div className='pb-20 pt-28'>
-          {children}
-        </div>
-        <Footer />
-
-      </body>
-    </html>
+    <main className="sm:pb-20 sm:pt-10">
+      {children}
+    </main>
   )
 }

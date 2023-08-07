@@ -80,15 +80,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         <div className="flex flex-col cursor-pointer">
                             {currentUser ? (
                                 <>
-                                    <MenuItem
-                                        onclick={() => {}}
-                                        label="My favorites"
-                                    />
-
                                     <hr />
                                     <MenuItem
                                         onclick={() => signOut()}
-                                        label="Logout"
+                                        label="Salir"
                                     />
                                 </>
                             ) : (

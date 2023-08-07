@@ -7,7 +7,6 @@ import { SafeUser } from "@/app/types";
 
 import Heading from "../Heading";
 import HeartButton from "../HeartButton";
-import Gallery from "../Gallery";
 
 interface ListingHeadProps {
   title: string;
@@ -32,27 +31,6 @@ const ListingHead: React.FC<ListingHeadProps> = ({
         title={title}
         subtitle={address}
       />
-      <div className="
-          w-full
-          overflow-hidden 
-          rounded-xl
-          relative
-        "
-      >
-        <Gallery images={[]} />
-        <div
-          className="
-            absolute
-            top-5
-            right-5
-          "
-        >
-          <HeartButton 
-            listingId={id}
-            currentUser={currentUser}
-          />
-        </div>
-      </div>
     </>
    );
 }

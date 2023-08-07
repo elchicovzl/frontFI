@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs-react";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
 
+
 export async function POST(
     request: Request 
 ){
@@ -13,7 +14,7 @@ export async function POST(
         password
     } = body;
 
-    const hashedPassword = await bcrypt.hash(password, 12);
+    const hashedPassword = await bcrypt.hashSync(password, bcrypt.genSaltSync(12));
     
     const user = await prisma.user.create({
         data: {
