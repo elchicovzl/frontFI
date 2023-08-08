@@ -61,8 +61,6 @@ const SearchModal = () => {
     let min = parseFloat(minStr.replaceAll(',',''));
     let max = parseFloat(maxStr.replaceAll(',',''));
 
-    console.log(min, max);
-
     if (isNaN(min)) {
       min = 0;
     }

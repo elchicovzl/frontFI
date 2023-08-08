@@ -44,17 +44,14 @@ const Map: React.FC<MapProps> = ({
         mousedown()   {
           const circle = circleRef.current
           const map = mapRef.current
-          console.log("in mouse down")
           map.on('mousemove', function (e) {
             circle.setLatLng(e.latlng);
-            console.log(circle.getLatLng().distanceTo([6.2442034, -75.5812115]) < circle.getRadius());
           });
           
           
         },
         click: function () {
           const map = mapRef.current
-          console.log("in mouse click")
           map.removeEventListener('mousemove');
         }
         

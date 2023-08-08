@@ -18,6 +18,13 @@ const ListingPage = async ({ params }: { params: IParams }) => {
         );
     }
 
+    if (listing.imageMultipleSrc.length > 0) {
+        for (let i = 0; i < listing.imageMultipleSrc.length; i++) {
+            var parts = listing.imageMultipleSrc[i].split("/");
+            parts[6] = "l_fiwatermark,w_200,x_1,y_1";
+            listing.imageMultipleSrc[i] = parts.join("/");
+          }
+    }
 
     return ( 
         <ListingClient

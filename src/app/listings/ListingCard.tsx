@@ -11,15 +11,10 @@ import {
     SafeUser
 } from "@/app/types";
 
-import Button from "../components/Button";
-import HeartButton from "../components/HeartButton";
 import { NumericFormat } from "react-number-format";
 
-import { 
-  GiForestCamp
-} from 'react-icons/gi';
-
 import { FaBed, FaBath, FaSquare, FaCamera } from 'react-icons/fa';
+import { FaLocationDot } from "react-icons/fa6";
 
 interface ListingCardProps {
     data: SafeListing;
@@ -72,7 +67,9 @@ const ListingCard: React.FC<ListingCardProps> = ({
         return `${format(start, 'PP')} - ${format(end, 'PP')}`;
       }, [reservation]);
 
-      console.log(data);
+      var parts = data.imageSrc.split("/");
+      parts[6] = "l_fiwatermark,w_200,x_1,y_1";
+      data.imageSrc = parts.join("/");
 
     return (
         <div 
@@ -113,7 +110,11 @@ const ListingCard: React.FC<ListingCardProps> = ({
                 </div>
         
                 <div className="mt-4">
-                  <h2 className="line-clamp-1 text-2xl font-medium text-gray-800 md:text-lg">{data.address}</h2>
+                  <div className="flex items-center">
+                    <FaLocationDot />
+                    <h2 className=" ml-1 line-clamp-1 md:text-xl font-medium text-gray-800 text-lg">{data.address}</h2>
+                  </div>
+                  
         
                   <p className="text-primary mt-2 inline-block whitespace-nowrap rounded-xl font-semibold leading-tight">
                     <NumericFormat
@@ -142,7 +143,10 @@ const ListingCard: React.FC<ListingCardProps> = ({
                       <FaSquare className="mr-2" />
                       {data.area}m<sup>2</sup>
                     </p>
+
+                    <p className="!ml-auto text-xs font-semibold">Código: {data.code}</p>
                   </div>
+                  
                 </div>
               </div>
             </div>

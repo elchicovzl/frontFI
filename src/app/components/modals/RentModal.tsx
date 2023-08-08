@@ -80,7 +80,6 @@ const RentModal = () => {
     const valueFixed = getByValue('CO');
 
     const onBack = () => {
-        console.log("back..")
         setStep((value) => value - 1);
     }
 

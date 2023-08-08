@@ -64,8 +64,6 @@ export interface IListingsParams {
       let minQuery ={};
       let maxQuery ={};
 
-      console.log(min, max);
-
       if (min != 'NaN') {
         minQuery = {
           gte: Number(min)
