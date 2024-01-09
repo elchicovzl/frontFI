@@ -41,11 +41,6 @@ export const categories = [
         description: 'Distracción fuera de la ciudad.'
       },
       {
-        label: 'Habitacion',
-        icon: GiPersonInBed,
-        description: 'Calida y comoda.'
-      },
-      {
         label: 'Lote',
         icon: GiForestCamp,
         description: 'Excelente ubicación'

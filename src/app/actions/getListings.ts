@@ -84,6 +84,7 @@ export interface IListingsParams {
         query.price = {...query.price, ...maxQuery}
       }
 
+      query.state = "Active";
   
       const listings = await prisma.listing.findMany({
         where: query,
